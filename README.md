@@ -35,7 +35,7 @@ KWalletPay is a high-end, modern Android payment application designed with a foc
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/KWalletPay.git
+   git clone https://github.com/akashray398/KWalletPay.git
    ```
 2. Open the project in **Android Studio (Ladybug or newer)**.
 3. Sync Gradle and run the app on an emulator or physical device.
@@ -43,5 +43,5 @@ KWalletPay is a high-end, modern Android payment application designed with a foc
 ---
 
 ### Developed by
-**AKASH**
+**AKASH YADAV**
 *Crafting premium digital experiences.*
