@@ -3,7 +3,9 @@ package com.example.kwalletpay
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +33,74 @@ class MainActivity : AppCompatActivity() {
 
         setupActionButtons()
         setupRecyclerView()
+        setupSettings()
+        setupNotifications()
+    }
+
+    private fun setupSettings() {
+        findViewById<View>(R.id.settingsCard)?.setOnClickListener {
+            showSettingsBottomSheet()
+        }
+    }
+
+    private fun setupNotifications() {
+        findViewById<View>(R.id.notificationCard)?.setOnClickListener {
+            showNotificationsBottomSheet()
+        }
+    }
+
+    private fun showNotificationsBottomSheet() {
+        val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+        val view = layoutInflater.inflate(R.layout.layout_notifications_bottom_sheet, null)
+        val container = view.findViewById<LinearLayout>(R.id.notificationsContainer)
+
+        val notifications = listOf(
+            Notification("Cashback Received!", "You've received ₹50 cashback on your last Zomato order.", "5 mins ago"),
+            Notification("Security Alert", "New login detected from a Chrome browser on Windows.", "1 hour ago"),
+            Notification("Monthly Summary", "Your spending for October is 15% lower than last month. Keep it up!", "Today")
+        )
+
+        notifications.forEach { notification ->
+            val notificationView = layoutInflater.inflate(R.layout.item_notification, container, false)
+            notificationView.findViewById<TextView>(R.id.notificationTitle).text = notification.title
+            notificationView.findViewById<TextView>(R.id.notificationMessage).text = notification.message
+            notificationView.findViewById<TextView>(R.id.notificationTime).text = notification.time
+            container.addView(notificationView)
+        }
+
+        view.findViewById<TextView>(R.id.btnMarkAllRead)?.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.setContentView(view)
+        dialog.show()
+    }
+
+    private fun showSettingsBottomSheet() {
+        val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+        val view = layoutInflater.inflate(R.layout.layout_settings_bottom_sheet, null)
+
+        // Setup Options
+        setupSettingOption(view.findViewById(R.id.optionProfile), "My Profile", "KYC Verified • Personal Details")
+        setupSettingOption(view.findViewById(R.id.optionBankAccounts), "Bank Accounts", "Manage linked accounts & cards")
+        setupSettingOption(view.findViewById(R.id.optionUpiIds), "UPI IDs", "Primary: akash@kwallet")
+        setupSettingOption(view.findViewById(R.id.optionSecurity), "Security", "Fingerprint, PIN & App Lock")
+        setupSettingOption(view.findViewById(R.id.optionHelp), "Help & Support", "24/7 Chat & Call support")
+
+        view.findViewById<TextView>(R.id.btnLogout)?.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.setContentView(view)
+        dialog.show()
+    }
+
+    private fun setupSettingOption(view: View, title: String, subtitle: String) {
+        view.findViewById<TextView>(R.id.optionTitle).text = title
+        view.findViewById<TextView>(R.id.optionSubtitle).text = subtitle
+        view.setOnClickListener {
+            // Handle option click
+        }
     }
 
     private fun setupActionButtons() {
