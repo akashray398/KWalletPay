@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Main Gradient Background (Vibrant Fintech Indigo/Violet) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#6366F1"
+                android:centerColor="#8B5CF6"
+                android:endColor="#D946EF"
+                android:type="linear" />
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+
+    <!-- Mesh Gradient Accent 1 (Top Right - Soft Glow) -->
+    <item android:top="-100dp" android:right="-100dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="300dp"
+                android:startColor="#60FFFFFF"
+                android:endColor="#00FFFFFF" />
+            <size android:width="400dp" android:height="400dp" />
+        </shape>
+    </item>
+
+    <!-- Mesh Gradient Accent 2 (Bottom Left - Deep Shade) -->
+    <item android:bottom="-50dp" android:left="-50dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="200dp"
+                android:startColor="#40000000"
+                android:endColor="#00000000" />
+            <size android:width="300dp" android:height="300dp" />
+        </shape>
+    </item>
+
+    <!-- Subtle Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="1.5dp" android:color="#30FFFFFF" />
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+</layer-list>

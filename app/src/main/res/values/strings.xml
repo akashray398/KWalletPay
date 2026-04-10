@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">KWalletPay</string>
+    <string name="checking_account">Checking account</string>
+    <string name="balance">₹185,540</string>
+    <string name="refer_friends">Refer friends</string>
+    <string name="get_amount">Get ₹10 for every referral</string>
+    <string name="refer_now">Refer Now</string>
+    <string name="home">Home</string>
+    <string name="explorer">Explorer</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="desc_profile">Profile Picture</string>
+    <string name="desc_notification">Notifications</string>
+    <string name="desc_settings">Settings</string>
+    <string name="deposit">Deposit</string>
+    <string name="paybill">Paybill</string>
+    <string name="transfer">Transfer</string>
+    <string name="scan_qr">Scan any QR</string>
+    <string name="check_balance">Check Balance</string>
+    <string name="shop">Shop</string>
+</resources>

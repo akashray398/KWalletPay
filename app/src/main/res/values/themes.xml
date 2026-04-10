@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.KWalletPay" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#4F46E5</item>
+        <item name="colorSecondary">#7C3AED</item>
+        <item name="android:windowBackground">@color/background_gray</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.KWalletPay" parent="Base.Theme.KWalletPay" />
+
+    <!-- Shape Appearances for ShapeableImageView -->
+    <style name="CircleAppearance">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedAppearance">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="CardAppearance">
+        <item name="cornerSize">20dp</item>
+    </style>
+</resources>

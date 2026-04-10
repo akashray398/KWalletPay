@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#0F172A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background_gray">#F8FAFC</color>
+    <color name="icon_bg_color">#F1F5F9</color>
+    
+    <!-- Fintech Elite Palette -->
+    <color name="colorPrimary">#6366F1</color> <!-- Indigo -->
+    <color name="colorPrimaryDark">#4338CA</color>
+    <color name="colorAccent">#F43F5E</color> <!-- Rose -->
+    
+    <color name="vivid_violet">#8B5CF6</color>
+    <color name="vivid_cyan">#06B6D4</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+
+    <!-- Professional Action Colors (Soft Backgrounds) -->
+    <color name="bg_scan">#EEF2FF</color>
+    <color name="icon_scan">#6366F1</color>
+    
+    <color name="bg_balance">#F5F3FF</color>
+    <color name="icon_balance">#8B5CF6</color>
+    
+    <color name="bg_shop">#FFFBEB</color>
+    <color name="icon_shop">#F59E0B</color>
+    
+    <color name="bg_deposit">#F0FDF4</color>
+    <color name="icon_deposit">#22C55E</color>
+    
+    <color name="bg_paybill">#ECFEFF</color>
+    <color name="icon_paybill">#06B6D4</color>
+    
+    <color name="bg_transfer">#F0F9FF</color>
+    <color name="icon_transfer">#0EA5E9</color>
+
+    <!-- Icon Gradient Colors -->
+    <color name="icon_gradient_start">#818CF8</color>
+    <color name="icon_gradient_mid">#6366F1</color>
+    <color name="icon_gradient_end">#4F46E5</color>
+    
+    <!-- Splash Gradient -->
+    <color name="splash_start">#1E1B4B</color> <!-- Deep Indigo -->
+    <color name="splash_end">#312E81</color>
+</resources>
