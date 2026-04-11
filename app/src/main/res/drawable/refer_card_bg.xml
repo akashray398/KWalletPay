@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Main Gradient Background (Vibrant Fintech Indigo/Violet) -->
+    <!-- Base Layer: Solid Deep Slate -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#0F172A" />
+            <corners android:radius="28dp" />
+        </shape>
+    </item>
+
+    <!-- Main Gradient Layer (Frosted Indigo) -->
     <item>
         <shape android:shape="rectangle">
             <gradient
-                android:angle="45"
-                android:startColor="#6366F1"
-                android:centerColor="#8B5CF6"
-                android:endColor="#D946EF"
+                android:angle="135"
+                android:startColor="#306366F1"
+                android:centerColor="#208B5CF6"
+                android:endColor="#10D946EF"
                 android:type="linear" />
-            <corners android:radius="32dp" />
+            <corners android:radius="28dp" />
         </shape>
     </item>
 
-    <!-- Mesh Gradient Accent 1 (Top Right - Soft Glow) -->
-    <item android:top="-100dp" android:right="-100dp">
+    <!-- Top Left Accent Glow -->
+    <item android:top="-50dp" android:left="-50dp">
         <shape android:shape="oval">
             <gradient
                 android:type="radial"
-                android:gradientRadius="300dp"
-                android:startColor="#60FFFFFF"
-                android:endColor="#00FFFFFF" />
-            <size android:width="400dp" android:height="400dp" />
+                android:gradientRadius="180dp"
+                android:startColor="#25818CF8"
+                android:endColor="#00000000" />
+            <size android:width="200dp" android:height="200dp" />
         </shape>
     </item>
 
-    <!-- Mesh Gradient Accent 2 (Bottom Left - Deep Shade) -->
-    <item android:bottom="-50dp" android:left="-50dp">
+    <!-- Bottom Right Accent Glow -->
+    <item android:bottom="-80dp" android:right="-80dp">
         <shape android:shape="oval">
             <gradient
                 android:type="radial"
                 android:gradientRadius="200dp"
-                android:startColor="#40000000"
+                android:startColor="#15F472B6"
                 android:endColor="#00000000" />
-            <size android:width="300dp" android:height="300dp" />
+            <size android:width="250dp" android:height="250dp" />
         </shape>
     </item>
 
-    <!-- Subtle Border -->
+    <!-- Glassmorphism Inner Stroke -->
     <item>
         <shape android:shape="rectangle">
-            <stroke android:width="1.5dp" android:color="#30FFFFFF" />
-            <corners android:radius="32dp" />
+            <stroke android:width="1.2dp" android:color="#20FFFFFF" />
+            <corners android:radius="28dp" />
         </shape>
     </item>
 </layer-list>

@@ -2,46 +2,95 @@
 <resources>
     <color name="black">#0F172A</color>
     <color name="white">#FFFFFF</color>
-    <color name="background_gray">#F8FAFC</color>
-    <color name="icon_bg_color">#F1F5F9</color>
     
-    <!-- Fintech Elite Palette -->
-    <color name="colorPrimary">#6366F1</color> <!-- Indigo -->
-    <color name="colorPrimaryDark">#4338CA</color>
-    <color name="colorAccent">#F43F5E</color> <!-- Rose -->
-    
-    <color name="vivid_violet">#8B5CF6</color>
-    <color name="vivid_cyan">#06B6D4</color>
-    
-    <!-- Text Colors -->
-    <color name="text_primary">#0F172A</color>
-    <color name="text_secondary">#475569</color>
+    <!-- Professional Midnight Base -->
+    <color name="bg_main">#0B0E14</color> 
+    <color name="background_gray">#0B0E14</color> 
+    <color name="surface_card">#111827</color> <!-- Deep Professional Slate -->
+    <color name="surface_card_border">#1F2937</color>
+    <color name="pro_button_bg">#1E293B</color>
+    <color name="pro_button_border">#334155</color>
 
-    <!-- Professional Action Colors (Soft Backgrounds) -->
-    <color name="bg_scan">#EEF2FF</color>
-    <color name="icon_scan">#6366F1</color>
+    <!-- Fintech Elite Palette (Vibrant Accents) -->
+    <color name="colorPrimary">#6366F1</color> <!-- Indigo 500 -->
+    <color name="colorAccent">#F43F5E</color>
     
-    <color name="bg_balance">#F5F3FF</color>
-    <color name="icon_balance">#8B5CF6</color>
-    
-    <color name="bg_shop">#FFFBEB</color>
-    <color name="icon_shop">#F59E0B</color>
-    
-    <color name="bg_deposit">#F0FDF4</color>
-    <color name="icon_deposit">#22C55E</color>
-    
-    <color name="bg_paybill">#ECFEFF</color>
-    <color name="icon_paybill">#06B6D4</color>
-    
-    <color name="bg_transfer">#F0F9FF</color>
-    <color name="icon_transfer">#0EA5E9</color>
-
-    <!-- Icon Gradient Colors -->
-    <color name="icon_gradient_start">#818CF8</color>
+    <!-- Launcher Gradient Colors -->
+    <color name="icon_gradient_start">#4F46E5</color>
     <color name="icon_gradient_mid">#6366F1</color>
-    <color name="icon_gradient_end">#4F46E5</color>
+    <color name="icon_gradient_end">#818CF8</color>
+
+    <!-- Splash and Icon Background Colors -->
+    <color name="icon_bg_color">#1E293B</color>
+    <color name="splash_start">#4F46E5</color>
+    <color name="splash_end">#0B0E14</color>
+
+    <!-- Quick Actions Colors -->
+    <color name="bg_scan">#1E1B4B</color>
+    <color name="icon_scan">#818CF8</color>
     
-    <!-- Splash Gradient -->
-    <color name="splash_start">#1E1B4B</color> <!-- Deep Indigo -->
-    <color name="splash_end">#312E81</color>
+    <color name="bg_balance">#2E1065</color>
+    <color name="icon_balance">#A78BFA</color>
+    
+    <color name="bg_shop">#451A03</color>
+    <color name="icon_shop">#FBBF24</color>
+    
+    <color name="bg_deposit">#064E3B</color>
+    <color name="icon_deposit">#34D399</color>
+    
+    <color name="bg_paybill">#164E63</color>
+    <color name="icon_paybill">#22D3EE</color>
+    
+    <color name="bg_transfer">#1E3A8A</color>
+    <color name="icon_transfer">#60A5FA</color>
+
+    <!-- Financial Services Colors -->
+    <color name="bg_loan">#4C0519</color>
+    <color name="icon_loan">#FB7185</color>
+    
+    <color name="bg_gold">#422006</color>
+    <color name="icon_gold">#F59E0B</color>
+    
+    <color name="bg_credit">#064E3B</color>
+    <color name="icon_credit">#10B981</color>
+    
+    <color name="bg_rewards">#4C0519</color>
+    <color name="icon_rewards">#F43F5E</color>
+
+    <!-- Explore Features Colors -->
+    <color name="explore_bg_invest">#064E3B</color>
+    <color name="explore_icon_invest">#34D399</color>
+    <color name="explore_bg_shopping">#451A03</color>
+    <color name="explore_icon_shopping">#FBBF24</color>
+    <color name="explore_bg_insurance">#1E3A8A</color>
+    <color name="explore_icon_insurance">#60A5FA</color>
+    <color name="explore_bg_travel">#164E63</color>
+    <color name="explore_icon_travel">#22D3EE</color>
+    <color name="explore_bg_utilities">#312E81</color>
+    <color name="explore_icon_utilities">#C7D2FE</color>
+
+    <!-- Legacy Aliases -->
+    <color name="pro_bg_scan">#1E1B4B</color>
+    <color name="pro_bg_balance">#2E1065</color>
+    <color name="pro_bg_shop">#451A03</color>
+    <color name="pro_bg_deposit">#064E3B</color>
+    <color name="pro_bg_paybill">#164E63</color>
+    <color name="pro_bg_transfer">#1E3A8A</color>
+    <color name="pro_bg_loan">#4C0519</color>
+    <color name="pro_bg_balance_alt">#2E1065</color>
+    
+    <color name="pro_icon_scan">#818CF8</color>
+    <color name="pro_icon_balance">#A78BFA</color>
+    <color name="pro_icon_shop">#FBBF24</color>
+    <color name="pro_icon_deposit">#34D399</color>
+    <color name="pro_icon_paybill">#22D3EE</color>
+    <color name="pro_icon_transfer">#60A5FA</color>
+    <color name="pro_icon_loan">#FB7185</color>
+
+    <color name="brand_transparent">#80FFFFFF</color>
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+
+    <color name="bg_blob_1_color">#266366F1</color>
+    <color name="bg_blob_2_color">#268B5CF6</color>
 </resources>

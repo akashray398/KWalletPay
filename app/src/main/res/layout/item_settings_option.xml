@@ -14,7 +14,7 @@
         android:id="@+id/optionIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="#F1F5F9"
+        android:background="@color/pro_button_bg"
         android:padding="10dp"
         android:src="@drawable/ic_settings"
         app:shapeAppearanceOverlay="@style/RoundedAppearance"
@@ -51,6 +51,6 @@
         android:layout_height="20dp"
         android:src="@drawable/ic_arrow_up"
         android:rotation="90"
-        app:tint="#CBD5E1" />
+        app:tint="@color/text_secondary" />
 
 </LinearLayout>

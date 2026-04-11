@@ -13,7 +13,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:padding="8dp"
-        android:background="#F1F5F9"
+        android:background="@color/pro_button_bg"
         android:src="@drawable/baseline_circle_notifications_24"
         app:tint="@color/colorPrimary"
         app:shapeAppearanceOverlay="@style/RoundedAppearance" />

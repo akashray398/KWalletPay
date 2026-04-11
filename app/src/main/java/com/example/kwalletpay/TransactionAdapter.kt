@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 data class Transaction(
@@ -34,10 +35,13 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
         holder.date.text = transaction.date
         holder.amount.text = transaction.amount
         
+        val context = holder.itemView.context
         if (transaction.isNegative) {
-            holder.amount.setTextColor(holder.itemView.context.getColor(android.R.color.black))
+            // Use Primary Text color for negative or a soft red
+            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.text_primary))
         } else {
-            holder.amount.setTextColor(holder.itemView.context.getColor(R.color.colorPrimary))
+            // Use Green/Emerald for credits
+            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.explore_icon_invest))
         }
     }
 

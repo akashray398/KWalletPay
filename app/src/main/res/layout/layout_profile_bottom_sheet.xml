@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:background="@color/surface_card_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+        
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/colorPrimary">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:src="@drawable/ic_profile_placeholder_unique" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Akash Ray"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/userUpi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="akash@kwallet"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnEditProfile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_up"
+            android:rotation="90"
+            app:tint="@color/colorPrimary" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 1. My QR Code -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionMyQr"/>
+            
+            <!-- 2. Bank Accounts -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionBanks"/>
+            
+            <!-- 3. UPI Settings -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionUpiSettings"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/surface_card_border" />
+
+            <!-- 4. AutoPay -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionAutopay"/>
+            
+            <!-- 5. Screen Lock -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionScreenLock"/>
+            
+            <!-- 6. Language -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionLanguage"/>
+            
+            <!-- 7. About & Support -->
+            <include layout="@layout/item_settings_option" android:id="@+id/optionAbout"/>
+
+            <TextView
+                android:id="@+id/btnProfileLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Logout"
+                android:textColor="#EF4444"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

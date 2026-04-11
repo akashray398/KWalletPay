@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:background="@color/surface_card_border" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Explore Services"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Trending &amp; Essential Services"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Investment Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-bold"
+        android:text="Investments"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:layout_marginBottom="24dp">
+
+        <include layout="@layout/item_action" android:id="@+id/exploreStocks" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreMutualFunds" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreGold" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreInsurance" android:layout_width="0dp" android:layout_columnWeight="1"/>
+    </GridLayout>
+
+    <!-- Shopping & Lifestyle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-bold"
+        android:text="Shopping &amp; Lifestyle"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:layout_marginBottom="24dp">
+
+        <include layout="@layout/item_action" android:id="@+id/exploreShopping" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreVouchers" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreTravel" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreMovies" android:layout_width="0dp" android:layout_columnWeight="1"/>
+    </GridLayout>
+
+    <!-- Utilities & Bills -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-bold"
+        android:text="Utilities &amp; Bills"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:layout_marginBottom="12dp">
+
+        <include layout="@layout/item_action" android:id="@+id/exploreElectricity" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreRecharge" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreGas" android:layout_width="0dp" android:layout_columnWeight="1"/>
+        <include layout="@layout/item_action" android:id="@+id/exploreWater" android:layout_width="0dp" android:layout_columnWeight="1"/>
+    </GridLayout>
+
+</LinearLayout>
