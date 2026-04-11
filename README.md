@@ -68,7 +68,7 @@ app/src/main/
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/KWalletPay.git
+git clone https://github.com/akashray398/KWalletPay.git
 
 # Navigate to the project
 cd KWalletPay
@@ -102,5 +102,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-### Developed by [AKASH](https://github.com/yourusername)
+### Developed by [AKASH](https://github.com/akashray398)
 *Crafting premium digital experiences with precision and style.*
