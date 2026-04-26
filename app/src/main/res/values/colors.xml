@@ -1,96 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#0F172A</color>
+    <!-- CRED Inspired Premium Dark Theme -->
+    <color name="background">#0A0A0A</color>
+    <color name="card_background">#111111</color>
+    <color name="card_pressed">#1A1A1A</color>
+    <color name="border">#1F1F1F</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8B8B8B</color>
+    <color name="accent">#6C5CE7</color>
+
+    <!-- App Branding -->
+    <color name="colorPrimary">#0A0A0A</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#6C5CE7</color>
+
+    <!-- Functional Colors (Minimalistic) -->
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     
-    <!-- Professional Midnight Base -->
-    <color name="bg_main">#0B0E14</color> 
-    <color name="background_gray">#0B0E14</color> 
-    <color name="surface_card">#111827</color> <!-- Deep Professional Slate -->
-    <color name="surface_card_border">#1F2937</color>
-    <color name="pro_button_bg">#1E293B</color>
-    <color name="pro_button_border">#334155</color>
+    <!-- Splash Screen (Restored Pretty Indigo) -->
+    <color name="splash_start">#1E1B4B</color>
+    <color name="splash_end">#312E81</color>
 
-    <!-- Fintech Elite Palette (Vibrant Accents) -->
-    <color name="colorPrimary">#6366F1</color> <!-- Indigo 500 -->
-    <color name="colorAccent">#F43F5E</color>
+    <!-- Legacy / Compatibility Mappings -->
+    <color name="cred_bg">#0A0A0A</color>
+    <color name="cred_card">#111111</color>
+    <color name="cred_card_pressed">#1A1A1A</color>
+    <color name="cred_border">#1F1F1F</color>
+    <color name="cred_accent">#6C5CE7</color>
     
-    <!-- Launcher Gradient Colors -->
-    <color name="icon_gradient_start">#4F46E5</color>
-    <color name="icon_gradient_mid">#6366F1</color>
-    <color name="icon_gradient_end">#818CF8</color>
+    <!-- Map colorful references to dark theme to prevent build errors -->
+    <color name="pro_bg_scan">#111111</color>
+    <color name="pro_bg_balance">#111111</color>
+    <color name="pro_bg_shop">#111111</color>
+    <color name="pro_bg_deposit">#111111</color>
+    <color name="pro_bg_paybill">#111111</color>
+    <color name="pro_bg_transfer">#111111</color>
+    <color name="pro_bg_loan">#111111</color>
+    <color name="bg_scan">#111111</color>
+    <color name="bg_balance">#111111</color>
+    <color name="bg_shop">#111111</color>
+    <color name="bg_deposit">#111111</color>
+    <color name="bg_paybill">#111111</color>
+    <color name="bg_transfer">#111111</color>
+    <color name="bg_loan">#111111</color>
+    <color name="bg_gold">#111111</color>
+    <color name="explore_bg_utilities">#111111</color>
+    <color name="explore_bg_travel">#111111</color>
+    <color name="bg_rewards">#111111</color>
 
-    <!-- Splash and Icon Background Colors -->
-    <color name="icon_bg_color">#1E293B</color>
-    <color name="splash_start">#4F46E5</color>
-    <color name="splash_end">#0B0E14</color>
-
-    <!-- Quick Actions Colors -->
-    <color name="bg_scan">#1E1B4B</color>
-    <color name="icon_scan">#818CF8</color>
-    
-    <color name="bg_balance">#2E1065</color>
-    <color name="icon_balance">#A78BFA</color>
-    
-    <color name="bg_shop">#451A03</color>
-    <color name="icon_shop">#FBBF24</color>
-    
-    <color name="bg_deposit">#064E3B</color>
-    <color name="icon_deposit">#34D399</color>
-    
-    <color name="bg_paybill">#164E63</color>
-    <color name="icon_paybill">#22D3EE</color>
-    
-    <color name="bg_transfer">#1E3A8A</color>
-    <color name="icon_transfer">#60A5FA</color>
-
-    <!-- Financial Services Colors -->
-    <color name="bg_loan">#4C0519</color>
-    <color name="icon_loan">#FB7185</color>
-    
-    <color name="bg_gold">#422006</color>
-    <color name="icon_gold">#F59E0B</color>
-    
-    <color name="bg_credit">#064E3B</color>
-    <color name="icon_credit">#10B981</color>
-    
-    <color name="bg_rewards">#4C0519</color>
-    <color name="icon_rewards">#F43F5E</color>
-
-    <!-- Explore Features Colors -->
-    <color name="explore_bg_invest">#064E3B</color>
-    <color name="explore_icon_invest">#34D399</color>
-    <color name="explore_bg_shopping">#451A03</color>
-    <color name="explore_icon_shopping">#FBBF24</color>
-    <color name="explore_bg_insurance">#1E3A8A</color>
-    <color name="explore_icon_insurance">#60A5FA</color>
-    <color name="explore_bg_travel">#164E63</color>
-    <color name="explore_icon_travel">#22D3EE</color>
-    <color name="explore_bg_utilities">#312E81</color>
-    <color name="explore_icon_utilities">#C7D2FE</color>
-
-    <!-- Legacy Aliases -->
-    <color name="pro_bg_scan">#1E1B4B</color>
-    <color name="pro_bg_balance">#2E1065</color>
-    <color name="pro_bg_shop">#451A03</color>
-    <color name="pro_bg_deposit">#064E3B</color>
-    <color name="pro_bg_paybill">#164E63</color>
-    <color name="pro_bg_transfer">#1E3A8A</color>
-    <color name="pro_bg_loan">#4C0519</color>
-    <color name="pro_bg_balance_alt">#2E1065</color>
-    
-    <color name="pro_icon_scan">#818CF8</color>
-    <color name="pro_icon_balance">#A78BFA</color>
-    <color name="pro_icon_shop">#FBBF24</color>
-    <color name="pro_icon_deposit">#34D399</color>
-    <color name="pro_icon_paybill">#22D3EE</color>
-    <color name="pro_icon_transfer">#60A5FA</color>
-    <color name="pro_icon_loan">#FB7185</color>
-
-    <color name="brand_transparent">#80FFFFFF</color>
-    <color name="text_primary">#F8FAFC</color>
-    <color name="text_secondary">#94A3B8</color>
-
-    <color name="bg_blob_1_color">#266366F1</color>
-    <color name="bg_blob_2_color">#268B5CF6</color>
+    <!-- Icon Accents (Using Accent or White) -->
+    <color name="pro_icon_scan">#6C5CE7</color>
+    <color name="pro_icon_balance">#6C5CE7</color>
+    <color name="pro_icon_shop">#6C5CE7</color>
+    <color name="pro_icon_deposit">#6C5CE7</color>
+    <color name="pro_icon_paybill">#6C5CE7</color>
+    <color name="pro_icon_transfer">#6C5CE7</color>
+    <color name="pro_icon_loan">#6C5CE7</color>
+    <color name="icon_gold">#6C5CE7</color>
+    <color name="explore_icon_utilities">#6C5CE7</color>
+    <color name="explore_icon_travel">#6C5CE7</color>
+    <color name="icon_rewards">#6C5CE7</color>
 </resources>
