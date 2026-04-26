@@ -22,12 +22,26 @@
     <color name="splash_start">#1E1B4B</color>
     <color name="splash_end">#312E81</color>
 
+    <!-- Launcher and Icon Gradients -->
+    <color name="icon_gradient_start">#6200EE</color>
+    <color name="icon_gradient_mid">#3700B3</color>
+    <color name="icon_gradient_end">#03DAC5</color>
+    <color name="icon_bg_color">#111111</color>
+
     <!-- Legacy / Compatibility Mappings -->
     <color name="cred_bg">#0A0A0A</color>
     <color name="cred_card">#111111</color>
     <color name="cred_card_pressed">#1A1A1A</color>
     <color name="cred_border">#1F1F1F</color>
     <color name="cred_accent">#6C5CE7</color>
+    
+    <!-- Surface and UI Elements -->
+    <color name="bg_main">#0A0A0A</color>
+    <color name="surface_card">#111111</color>
+    <color name="surface_card_border">#1F1F1F</color>
+    <color name="pro_button_border">#1F1F1F</color>
+    <color name="background_gray">#1A1A1A</color>
+    <color name="pro_button_bg">#111111</color>
     
     <!-- Map colorful references to dark theme to prevent build errors -->
     <color name="pro_bg_scan">#111111</color>
@@ -60,5 +74,6 @@
     <color name="icon_gold">#6C5CE7</color>
     <color name="explore_icon_utilities">#6C5CE7</color>
     <color name="explore_icon_travel">#6C5CE7</color>
+    <color name="explore_icon_invest">#6C5CE7</color>
     <color name="icon_rewards">#6C5CE7</color>
 </resources>

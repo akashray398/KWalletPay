@@ -29,6 +29,13 @@
     <string name="recent_transactions">Recent Transactions</string>
     <string name="see_all">See All</string>
 
+    <!-- Redesigned Hero Strings -->
+    <string name="hi_user">Hi, User 👋</string>
+    <string name="available_balance_label">Available Balance</string>
+    <string name="send">Send</string>
+    <string name="receive">Receive</string>
+    <string name="scan">Scan QR</string>
+
     <!-- Profile Screen Strings -->
     <string name="member_since">Member since March 2024</string>
     <string name="user_upi_id">akash@kwallet</string>
