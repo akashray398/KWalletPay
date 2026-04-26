@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">KWallet</string>
     <string name="experience">EXPERIENCE</string>
-    <string name="kwalletpay">KWallet</string>
-    <string name="premium_fintech">Premium Fintech</string>
+    <string name="kwalletpay">KWalletPay</string>
+    <string name="premium_fintech">premium fintech</string>
     <string name="welcome_back">Welcome back,</string>
     <string name="checking_account">Checking account</string>
     <string name="balance">₹185,540</string>
@@ -11,9 +11,10 @@
     <string name="refer_now">Invite Now</string>
     <string name="home">Home</string>
     <string name="explorer">Explorer</string>
+    <string name="explore">Explore</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
-    <string name="desc_profile">Profile Picture</string>
+    <string name="desc_profile">Profile</string>
     <string name="desc_notification">Notifications</string>
     <string name="desc_settings">Settings</string>
     <string name="deposit">Deposit</string>
@@ -22,4 +23,71 @@
     <string name="scan_qr">Scan any QR</string>
     <string name="check_balance">Check Balance</string>
     <string name="shop">Shop</string>
+    <string name="refer_earn_rewards">Refer &amp; Earn Rewards</string>
+    <string name="get_cashback">Get ₹201 Cashback</string>
+    <string name="financial_services">Financial Services</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="see_all">See All</string>
+
+    <!-- Profile Screen Strings -->
+    <string name="member_since">Member since March 2024</string>
+    <string name="user_upi_id">akash@kwallet</string>
+    <string name="my_qr_code">My QR Code</string>
+    <string name="wallet">Wallet</string>
+    <string name="wallet_balance">Wallet Balance</string>
+    <string name="wallet_amount">₹12,000.00</string>
+    <string name="cashback_won">Cashback Won</string>
+    <string name="cashback_amount">₹450.00</string>
+    <string name="upi_settings">UPI Settings</string>
+    <string name="account_management">Account Management</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="everything_upi">Everything UPI</string>
+    <string name="shopping">Shopping</string>
+    <string name="orders">Orders</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="saved_addresses">Saved Addresses</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="apply_credit_card">Apply for Credit Card</string>
+    <string name="cc_reward_offer">Earn 5% coins on every spend</string>
+    <string name="recharge_bills">Recharge &amp; Bills</string>
+    <string name="pay_bills">Pay Bills</string>
+    <string name="rewards_offers">Rewards &amp; Offers</string>
+    <string name="rewards">Rewards</string>
+    <string name="others">Others</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="logout">Logout</string>
+    <string name="copy_upi">Copy UPI ID</string>
+    <string name="edit_profile">Edit Profile</string>
+
+    <!-- Shop Activity Strings -->
+    <string name="shop_title">KWallet Store</string>
+    <string name="search_services">Search for recharges, bills, etc.</string>
+    <string name="recharges_bills">Recharges &amp; Pay Bills</string>
+    <string name="mobile_recharge">Mobile Recharge</string>
+    <string name="dth">DTH</string>
+    <string name="electricity">Electricity</string>
+    <string name="rent_payment">Rent Payment</string>
+    <string name="travel_bookings">Travel &amp; Bookings</string>
+    <string name="flights">Flights</string>
+    <string name="bus">Bus</string>
+    <string name="trains">Trains</string>
+    <string name="hotels">Hotels</string>
+    <string name="lifestyle_vouchers">Lifestyle &amp; Vouchers</string>
+    <string name="brand_vouchers">Brand Vouchers</string>
+    <string name="google_play">Google Play</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="movies">Movies</string>
+    <string name="events">Events</string>
+
+    <!-- Deposit Activity Strings -->
+    <string name="add_money">Add Money to Wallet</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="add_money_btn">Add to Wallet</string>
+    <string name="available_balance">Available Balance: ₹12,000</string>
+    <string name="select_bank">Select Bank/UPI</string>
+    <string name="add_success">Money added successfully!</string>
+    <string name="invalid_amount">Please enter a valid amount</string>
 </resources>

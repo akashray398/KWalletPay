@@ -10,6 +10,34 @@
 
     <style name="Theme.KWalletPay" parent="Base.Theme.KWalletPay" />
 
+    <!-- Section Styles -->
+    <style name="SectionHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="SectionCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardBackgroundColor">@color/surface_card</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeColor">@color/surface_card_border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/surface_card_border</item>
+    </style>
+
     <!-- Shape Appearances for ShapeableImageView -->
     <style name="CircleAppearance">
         <item name="cornerSize">50%</item>

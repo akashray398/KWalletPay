@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_main"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_up"
+            app:navigationIconTint="@color/text_primary"
+            app:title="@string/shop_title"
+            app:titleCentered="true"
+            app:titleTextColor="@color/text_primary" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/surface_card"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/surface_card_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_nav_explorer_unique"
+                    app:tint="@color/text_secondary" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/search_services"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="24dp">
+
+            <!-- Recharges & Bills -->
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/recharges_bills" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/SectionCard">
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="4"
+                    android:paddingVertical="12dp">
+
+                    <include layout="@layout/item_action" android:id="@+id/shopMobile" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopDth" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopElectricity" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopRent" android:layout_width="0dp" android:layout_columnWeight="1" />
+                </GridLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Travel & Bookings -->
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/travel_bookings" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/SectionCard">
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="4"
+                    android:paddingVertical="12dp">
+
+                    <include layout="@layout/item_action" android:id="@+id/shopFlights" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopBus" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopTrains" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopHotels" android:layout_width="0dp" android:layout_columnWeight="1" />
+                </GridLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Entertainment & Lifestyle -->
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/lifestyle_vouchers" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/SectionCard">
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="4"
+                    android:paddingVertical="12dp">
+
+                    <include layout="@layout/item_action" android:id="@+id/shopGooglePlay" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopVouchers" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopMovies" android:layout_width="0dp" android:layout_columnWeight="1" />
+                    <include layout="@layout/item_action" android:id="@+id/shopEvents" android:layout_width="0dp" android:layout_columnWeight="1" />
+                </GridLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
