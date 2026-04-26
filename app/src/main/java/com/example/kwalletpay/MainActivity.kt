@@ -8,6 +8,7 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -39,6 +40,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Screen Load Animation
+        binding.mainContent.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
+
         setupActionButtons()
         setupFinancialServices()
         setupRecyclerView()
@@ -48,15 +52,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDrawer() {
-        // Setup Profile button to open drawer
         binding.profileCard.setOnClickListener {
+            animateClick(it)
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
 
-        // Setup logic for the included profile layout inside the drawer
         val drawerBinding = binding.drawerProfile
-        
-        // Fix "Option Title" issue in Drawer Profile
         setupProfileOptions(drawerBinding)
 
         drawerBinding.toolbar.setNavigationOnClickListener {
@@ -64,23 +65,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         drawerBinding.btnLogout.setOnClickListener {
+            animateClick(it)
             Toast.makeText(this, "Logged out safely", Toast.LENGTH_SHORT).show()
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         }
     }
 
     private fun setupProfileOptions(pBinding: ActivityProfileBinding) {
-        // UPI Section
         setupOptionItem(pBinding.optionAccountManagement, R.string.account_management, "Manage your linked bank accounts", R.drawable.ic_check_balance_unique)
         setupOptionItem(pBinding.optionTransactionHistory, R.string.transaction_history, "View all your past transactions", R.drawable.ic_nav_history)
         setupOptionItem(pBinding.optionEverythingUpi, R.string.everything_upi, "UPI IDs, QR codes, and more", R.drawable.ic_settings)
-
-        // Shop Section
         setupOptionItem(pBinding.optionOrders, R.string.orders, "Track and manage your orders", R.drawable.ic_shop_unique)
         setupOptionItem(pBinding.optionWishlist, R.string.wishlist, "Items you've saved for later", R.drawable.ic_action_transfer_unique)
         setupOptionItem(pBinding.optionSavedAddresses, R.string.saved_addresses, "Manage your delivery locations", R.drawable.ic_nav_home_unique)
-
-        // Others Section
         setupOptionItem(pBinding.optionHelpSupport, R.string.help_support, "Get help with your queries", R.drawable.ic_nav_home_unique)
         setupOptionItem(pBinding.optionTerms, R.string.terms_conditions, "Read our terms of service", R.drawable.ic_settings)
         setupOptionItem(pBinding.optionPrivacy, R.string.privacy_policy, "How we handle your data", R.drawable.ic_settings)
@@ -93,13 +90,17 @@ class MainActivity : AppCompatActivity() {
         itemBinding.optionIcon.setImageResource(iconRes)
         
         itemBinding.root.setOnClickListener {
+            animateClick(it)
             Toast.makeText(this, "Opening ${getString(titleRes)}...", Toast.LENGTH_SHORT).show()
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         }
     }
 
+    private fun animateClick(view: View) {
+        view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.button_click))
+    }
+
     private fun startReferCardAnimations() {
-        // Glow Pulse & Rotate Animation
         val referGlow = binding.referCard.findViewById<View>(R.id.referGlow)
         if (referGlow != null) {
             ObjectAnimator.ofFloat(referGlow, View.ALPHA, 0.2f, 0.5f).apply {
@@ -111,7 +112,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Icon Floating Animation
         val referIcon = binding.referCard.findViewById<View>(R.id.referIcon)
         if (referIcon != null) {
             val floatAnim = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, -10f, 10f)
@@ -128,28 +128,46 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigation() {
-        binding.navHome.setOnClickListener { updateBottomNavSelection(it) }
+        binding.navHome.setOnClickListener { 
+            animateClick(it)
+            updateBottomNavSelection(it) 
+        }
         binding.navExplore.setOnClickListener {
+            animateClick(it)
             updateBottomNavSelection(it)
             startActivity(Intent(this, ShopActivity::class.java))
         }
         binding.navHistory.setOnClickListener {
+            animateClick(it)
             updateBottomNavSelection(it)
             Toast.makeText(this, "Transaction History coming soon!", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun updateBottomNavSelection(selected: View) {
-        val navs = listOf(
-            Triple(binding.navHome, binding.ivNavHome, binding.tvNavHome),
-            Triple(binding.navExplore, binding.ivNavExplore, binding.tvNavExplore),
-            Triple(binding.navHistory, binding.ivNavHistory, binding.tvNavHistory)
+        val navItems = listOf(
+            Triple(binding.navHome, binding.indicatorHome, listOf(binding.ivNavHome, binding.tvNavHome)),
+            Triple(binding.navExplore, binding.indicatorExplore, listOf(binding.ivNavExplore, binding.tvNavExplore)),
+            Triple(binding.navHistory, binding.indicatorHistory, listOf(binding.ivNavHistory, binding.tvNavHistory))
         )
 
-        navs.forEach { (view, icon, text) ->
-            val color = if (view == selected) R.color.accent else R.color.text_secondary
-            icon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, color))
-            text.setTextColor(ContextCompat.getColor(this, color))
+        navItems.forEach { (root, indicator, contents) ->
+            val isActive = root == selected
+            val color = if (isActive) R.color.accent else R.color.text_secondary
+            
+            indicator.animate().alpha(if (isActive) 1f else 0f).setDuration(200).start()
+            
+            contents.forEach { view ->
+                val tint = ContextCompat.getColor(this, color)
+                if (view is ImageView) view.imageTintList = ColorStateList.valueOf(tint)
+                if (view is TextView) view.setTextColor(tint)
+                
+                view.animate()
+                    .scaleX(if (isActive) 1.1f else 1.0f)
+                    .scaleY(if (isActive) 1.1f else 1.0f)
+                    .setDuration(200)
+                    .start()
+            }
         }
     }
 
@@ -161,11 +179,21 @@ class MainActivity : AppCompatActivity() {
         setupAction(binding.includePaybill.root, "Pay Bill", R.drawable.ic_action_paybill_unique, R.color.pro_bg_paybill, R.color.pro_icon_paybill)
         setupAction(binding.includeTransfer.root, "Transfer", R.drawable.ic_action_transfer_unique, R.color.pro_bg_transfer, R.color.pro_icon_transfer)
 
-        binding.cardCheckBalance.setOnClickListener { toggleBalance() }
-        binding.cardShop.setOnClickListener { startActivity(Intent(this, ShopActivity::class.java)) }
-        binding.cardDeposit.setOnClickListener { startActivity(Intent(this, DepositActivity::class.java)) }
+        binding.cardCheckBalance.setOnClickListener { 
+            animateClick(it)
+            toggleBalance() 
+        }
+        binding.cardShop.setOnClickListener { 
+            animateClick(it)
+            startActivity(Intent(this, ShopActivity::class.java)) 
+        }
+        binding.cardDeposit.setOnClickListener { 
+            animateClick(it)
+            startActivity(Intent(this, DepositActivity::class.java)) 
+        }
         
         binding.referButton.setOnClickListener {
+            animateClick(it)
             val shareIntent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, "Join KWalletPay and get ₹201 cashback: https://kwalletpay.app/refer/akash")
@@ -187,6 +215,7 @@ class MainActivity : AppCompatActivity() {
             setImageResource(iconResId)
             imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, iconColorId))
         }
+        view.setOnClickListener { animateClick(it) }
     }
 
     private fun toggleBalance() {
@@ -205,12 +234,15 @@ class MainActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         binding.transactionRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.transactionRecyclerView.adapter = TransactionAdapter(getRecentTransactions())
+        binding.transactionRecyclerView.layoutAnimation = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_staggered)
 
         binding.historyHeader.setOnClickListener {
+            animateClick(it)
             binding.transactionRecyclerView.visibility = if (binding.transactionRecyclerView.visibility == View.VISIBLE) View.GONE else View.VISIBLE
         }
         
         binding.btnSeeAllHistory.setOnClickListener {
+            animateClick(it)
             Toast.makeText(this, "Full history coming soon!", Toast.LENGTH_SHORT).show()
         }
     }
