@@ -172,26 +172,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupActionButtons() {
-        setupAction(binding.includeScanQR.root, "Scan QR", R.drawable.ic_scan_qr_unique, R.color.pro_bg_scan, R.color.pro_icon_scan)
-        setupAction(binding.includeCheckBalance.root, "Check Balance", R.drawable.ic_check_balance_unique, R.color.pro_bg_balance, R.color.pro_icon_balance)
-        setupAction(binding.includeShop.root, "Shop", R.drawable.ic_shop_unique, R.color.pro_bg_shop, R.color.pro_icon_shop)
-        setupAction(binding.includeDeposit.root, "Deposit", R.drawable.ic_action_deposit_unique, R.color.pro_bg_deposit, R.color.pro_icon_deposit)
-        setupAction(binding.includePaybill.root, "Pay Bill", R.drawable.ic_action_paybill_unique, R.color.pro_bg_paybill, R.color.pro_icon_paybill)
-        setupAction(binding.includeTransfer.root, "Transfer", R.drawable.ic_action_transfer_unique, R.color.pro_bg_transfer, R.color.pro_icon_transfer)
-
-        binding.cardCheckBalance.setOnClickListener { 
-            animateClick(it)
-            toggleBalance() 
-        }
-        binding.cardShop.setOnClickListener { 
-            animateClick(it)
-            startActivity(Intent(this, ShopActivity::class.java)) 
-        }
-        binding.cardDeposit.setOnClickListener { 
-            animateClick(it)
-            startActivity(Intent(this, DepositActivity::class.java)) 
+        setupAction(binding.includeScanQR.root, "Scan QR", R.drawable.ic_scan_qr_unique, R.color.pro_bg_scan, R.color.pro_icon_scan) {
+            Toast.makeText(this, "Scanner coming soon!", Toast.LENGTH_SHORT).show()
         }
         
+        setupAction(binding.includeCheckBalance.root, "Check Balance", R.drawable.ic_check_balance_unique, R.color.pro_bg_balance, R.color.pro_icon_balance) {
+            toggleBalance()
+        }
+        
+        setupAction(binding.includeShop.root, "Shop", R.drawable.ic_shop_unique, R.color.pro_bg_shop, R.color.pro_icon_shop) {
+            startActivity(Intent(this, ShopActivity::class.java))
+        }
+        
+        setupAction(binding.includeDeposit.root, "Deposit", R.drawable.ic_action_deposit_unique, R.color.pro_bg_deposit, R.color.pro_icon_deposit) {
+            startActivity(Intent(this, DepositActivity::class.java))
+        }
+        
+        setupAction(binding.includePaybill.root, "Pay Bill", R.drawable.ic_action_paybill_unique, R.color.pro_bg_paybill, R.color.pro_icon_paybill) {
+             Toast.makeText(this, "Bill Pay coming soon!", Toast.LENGTH_SHORT).show()
+        }
+        
+        setupAction(binding.includeTransfer.root, "Transfer", R.drawable.ic_action_transfer_unique, R.color.pro_bg_transfer, R.color.pro_icon_transfer) {
+             Toast.makeText(this, "Transfer coming soon!", Toast.LENGTH_SHORT).show()
+        }
+
         binding.referButton.setOnClickListener {
             animateClick(it)
             val shareIntent = Intent(Intent.ACTION_SEND).apply {
@@ -203,19 +207,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupFinancialServices() {
-        setupAction(binding.includePersonalLoan.root, "Personal Loan", R.drawable.ic_action_deposit_unique, R.color.pro_bg_loan, R.color.pro_icon_loan)
-        setupAction(binding.includeGoldLoan.root, "Gold Loan", R.drawable.ic_shop_unique, R.color.bg_gold, R.color.icon_gold)
-        setupAction(binding.includeCreditScore.root, "Credit Score", R.drawable.ic_scan_qr_unique, R.color.pro_bg_deposit, R.color.pro_icon_deposit)
-        setupAction(binding.includeRewards.root, "Rewards", R.drawable.ic_nav_home_unique, R.color.pro_bg_balance, R.color.pro_icon_balance)
+        setupAction(binding.includePersonalLoan.root, "Personal Loan", R.drawable.ic_action_deposit_unique, R.color.pro_bg_loan, R.color.pro_icon_loan) {
+            Toast.makeText(this, "Personal Loan coming soon!", Toast.LENGTH_SHORT).show()
+        }
+        setupAction(binding.includeGoldLoan.root, "Gold Loan", R.drawable.ic_shop_unique, R.color.bg_gold, R.color.icon_gold) {
+            Toast.makeText(this, "Gold Loan coming soon!", Toast.LENGTH_SHORT).show()
+        }
+        setupAction(binding.includeCreditScore.root, "Credit Score", R.drawable.ic_scan_qr_unique, R.color.pro_bg_deposit, R.color.pro_icon_deposit) {
+            Toast.makeText(this, "Credit Score coming soon!", Toast.LENGTH_SHORT).show()
+        }
+        setupAction(binding.includeRewards.root, "Rewards", R.drawable.ic_nav_home_unique, R.color.pro_bg_balance, R.color.pro_icon_balance) {
+            Toast.makeText(this, "Rewards coming soon!", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun setupAction(view: View, text: String, iconResId: Int, bgColorId: Int, iconColorId: Int) {
+    private fun setupAction(view: View, text: String, iconResId: Int, bgColorId: Int, iconColorId: Int, onClick: (() -> Unit)? = null) {
         view.findViewById<TextView>(R.id.actionText).text = text
         view.findViewById<ImageView>(R.id.actionIcon).apply {
             setImageResource(iconResId)
             imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, iconColorId))
         }
-        view.setOnClickListener { animateClick(it) }
+        view.setOnClickListener { 
+            animateClick(it)
+            onClick?.invoke()
+        }
     }
 
     private fun toggleBalance() {
