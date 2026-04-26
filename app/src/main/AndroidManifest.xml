@@ -24,6 +24,24 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="@string/profile"
+            android:theme="@style/Theme.KWalletPay" />
+
+        <activity
+            android:name=".ShopActivity"
+            android:exported="false"
+            android:label="@string/shop_title"
+            android:theme="@style/Theme.KWalletPay" />
+
+        <activity
+            android:name=".DepositActivity"
+            android:exported="false"
+            android:label="@string/add_money"
+            android:theme="@style/Theme.KWalletPay" />
             
     </application>
 
