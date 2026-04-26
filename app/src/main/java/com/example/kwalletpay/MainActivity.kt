@@ -100,24 +100,30 @@ class MainActivity : AppCompatActivity() {
 
     private fun startReferCardAnimations() {
         // Glow Pulse & Rotate Animation
-        ObjectAnimator.ofFloat(binding.referCard.findViewById(R.id.referGlow), View.ALPHA, 0.2f, 0.5f).apply {
-            duration = 3000
-            repeatCount = ValueAnimator.INFINITE
-            repeatMode = ValueAnimator.REVERSE
-            interpolator = AccelerateDecelerateInterpolator()
-            start()
+        val referGlow = binding.referCard.findViewById<View>(R.id.referGlow)
+        if (referGlow != null) {
+            ObjectAnimator.ofFloat(referGlow, View.ALPHA, 0.2f, 0.5f).apply {
+                duration = 3000
+                repeatCount = ValueAnimator.INFINITE
+                repeatMode = ValueAnimator.REVERSE
+                interpolator = AccelerateDecelerateInterpolator()
+                start()
+            }
         }
 
         // Icon Floating Animation
-        val floatAnim = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, -10f, 10f)
-        val rotateAnim = PropertyValuesHolder.ofFloat(View.ROTATION, -15f, -5f)
+        val referIcon = binding.referCard.findViewById<View>(R.id.referIcon)
+        if (referIcon != null) {
+            val floatAnim = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, -10f, 10f)
+            val rotateAnim = PropertyValuesHolder.ofFloat(View.ROTATION, -15f, -5f)
 
-        ObjectAnimator.ofPropertyValuesHolder(binding.referCard.findViewById(R.id.referIcon), floatAnim, rotateAnim).apply {
-            duration = 2500
-            repeatCount = ValueAnimator.INFINITE
-            repeatMode = ValueAnimator.REVERSE
-            interpolator = AccelerateDecelerateInterpolator()
-            start()
+            ObjectAnimator.ofPropertyValuesHolder(referIcon, floatAnim, rotateAnim).apply {
+                duration = 2500
+                repeatCount = ValueAnimator.INFINITE
+                repeatMode = ValueAnimator.REVERSE
+                interpolator = AccelerateDecelerateInterpolator()
+                start()
+            }
         }
     }
 
@@ -141,7 +147,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         navs.forEach { (view, icon, text) ->
-            val color = if (view == selected) R.color.colorPrimary else R.color.text_secondary
+            val color = if (view == selected) R.color.accent else R.color.text_secondary
             icon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, color))
             text.setTextColor(ContextCompat.getColor(this, color))
         }
@@ -179,8 +185,6 @@ class MainActivity : AppCompatActivity() {
         view.findViewById<TextView>(R.id.actionText).text = text
         view.findViewById<ImageView>(R.id.actionIcon).apply {
             setImageResource(iconResId)
-            // Fix: backgroundTintList was being applied to ImageView directly which might not be what's intended for item_action layout
-            // But since the user wants to fix unresolved references, keeping logic but ensuring resources exist.
             imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this@MainActivity, iconColorId))
         }
     }
@@ -213,10 +217,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRecentTransactions(): List<Transaction> {
         return listOf(
-            Transaction("Paid to Swiggy", "Today • 08:45 PM", "-₹342", true),
-            Transaction("Received from Akash Yadav", "Today • 12:30 PM", "+₹2,500", false),
-            Transaction("Jio Prepaid Recharge", "Yesterday • 10:15 AM", "-₹749", true),
-            Transaction("Salary Credited", "25 Oct • 09:00 AM", "+₹85,000", false)
+            Transaction("Paid to Swiggy", "Today • 08:45 PM", "-₹342", R.drawable.ic_shop_unique, true),
+            Transaction("Received from Akash Yadav", "Today • 12:30 PM", "+₹2,500", R.drawable.ic_action_transfer_unique, false),
+            Transaction("Jio Prepaid Recharge", "Yesterday • 10:15 AM", "-₹749", R.drawable.ic_action_paybill_unique, true),
+            Transaction("Salary Credited", "25 Oct • 09:00 AM", "+₹85,000", R.drawable.ic_action_transfer_unique, false)
         )
     }
 }

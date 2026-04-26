@@ -3,14 +3,16 @@ package com.example.kwalletpay
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 data class Transaction(
     val title: String,
-    val date: String,
+    val status: String,
     val amount: String,
+    val iconRes: Int,
     val isNegative: Boolean = true
 )
 
@@ -18,8 +20,9 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
     RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val icon: ImageView = view.findViewById(R.id.transactionIcon)
         val title: TextView = view.findViewById(R.id.transactionTitle)
-        val date: TextView = view.findViewById(R.id.transactionDate)
+        val status: TextView = view.findViewById(R.id.transactionStatus)
         val amount: TextView = view.findViewById(R.id.transactionAmount)
     }
 
@@ -32,16 +35,25 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val transaction = transactions[position]
         holder.title.text = transaction.title
-        holder.date.text = transaction.date
+        holder.status.text = transaction.status
         holder.amount.text = transaction.amount
+        holder.icon.setImageResource(transaction.iconRes)
         
         val context = holder.itemView.context
+        
+        // Color coding for amount
         if (transaction.isNegative) {
-            // Use Primary Text color for negative or a soft red
             holder.amount.setTextColor(ContextCompat.getColor(context, R.color.text_primary))
         } else {
-            // Use Green/Emerald for credits
-            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.explore_icon_invest))
+            // Success/Credit color
+            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.accent))
+        }
+
+        // Status styling if needed
+        if (transaction.status.contains("Pending", ignoreCase = true)) {
+            holder.status.setTextColor(ContextCompat.getColor(context, R.color.icon_gold))
+        } else {
+            holder.status.setTextColor(ContextCompat.getColor(context, R.color.text_secondary))
         }
     }
 
