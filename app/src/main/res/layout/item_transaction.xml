@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingVertical="12dp"
+    android:paddingVertical="14dp"
     android:paddingHorizontal="4dp"
     android:background="?attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
 
+    <!-- Left: Icon/Avatar -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/transactionIcon"
         android:layout_width="48dp"
@@ -24,6 +25,7 @@
         app:strokeColor="@color/border"
         app:strokeWidth="1dp" />
 
+    <!-- Center: Title + Subtitle -->
     <LinearLayout
         android:id="@+id/textContainer"
         android:layout_width="0dp"
@@ -32,7 +34,7 @@
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/amountContainer"
+        app:layout_constraintEnd_toStartOf="@+id/transactionAmount"
         app:layout_constraintStart_toEndOf="@+id/transactionIcon"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -43,7 +45,7 @@
             android:fontFamily="sans-serif-medium"
             android:textColor="@color/text_primary"
             android:textSize="15sp"
-            tools:text="Amazon Prime" />
+            tools:text="Paid to Swiggy" />
 
         <TextView
             android:id="@+id/transactionStatus"
@@ -53,37 +55,20 @@
             android:fontFamily="sans-serif"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
-            tools:text="Success • 12:45 PM" />
+            tools:text="Today • 08:45 PM" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/amountContainer"
+    <!-- Right: Amount -->
+    <TextView
+        android:id="@+id/transactionAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="vertical"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/text_primary"
+        android:textSize="17sp"
+        tools:text="-₹342"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/transactionAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            tools:text="-$12.99" />
-
-        <TextView
-            android:id="@+id/transactionType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/text_secondary"
-            android:textSize="11sp"
-            android:visibility="gone"
-            tools:text="Debit" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

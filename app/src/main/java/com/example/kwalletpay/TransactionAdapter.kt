@@ -41,19 +41,11 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
         
         val context = holder.itemView.context
         
-        // Color coding for amount
+        // Color coding for amount hierarchy
         if (transaction.isNegative) {
-            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.text_primary))
+            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.transaction_debit))
         } else {
-            // Success/Credit color
-            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.accent))
-        }
-
-        // Status styling if needed
-        if (transaction.status.contains("Pending", ignoreCase = true)) {
-            holder.status.setTextColor(ContextCompat.getColor(context, R.color.icon_gold))
-        } else {
-            holder.status.setTextColor(ContextCompat.getColor(context, R.color.text_secondary))
+            holder.amount.setTextColor(ContextCompat.getColor(context, R.color.transaction_credit))
         }
     }
 
