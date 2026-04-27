@@ -172,8 +172,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupActionButtons() {
-        setupAction(binding.includeScanQR.root, "Scan QR", R.drawable.ic_scan_qr_unique, R.color.pro_bg_scan, R.color.pro_icon_scan) {
-            Toast.makeText(this, "Scanner coming soon!", Toast.LENGTH_SHORT).show()
+        // Highlighted Primary Action (Scan QR)
+        setupAction(binding.includeScanQR.root, "Scan QR", R.drawable.ic_scan_qr_unique, R.color.pro_bg_scan, R.color.white) {
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
         
         setupAction(binding.includeCheckBalance.root, "Check Balance", R.drawable.ic_check_balance_unique, R.color.pro_bg_balance, R.color.pro_icon_balance) {
